@@ -1,0 +1,120 @@
+🔥 Advanced Interview Points for This Section
+
+Difference between locator and selector
+
+Why built-in locators are preferred
+
+How auto-wait works
+
+Difference between check() and click()
+
+When to use soft assertions
+
+Handling dynamic elements
+
+Avoiding flaky dropdown tests
+
+🔥 Advanced Concepts (Very Important for SDET)
+1. Actionability Checks
+Before performing action, Playwright ensures:
+Element visible
+
+
+Enabled
+
+
+Stable
+
+
+Not covered
+
+
+
+2. Auto Waiting
+Playwright automatically waits for:
+Element to appear
+
+
+Element to become actionable
+
+
+Assertion condition
+
+
+No need for explicit waits.
+
+3. Flaky Test Prevention
+Avoid:
+await page.waitForTimeout(3000);
+Use:
+await expect(locator).toBeVisible();
+
+🧠 Real Project Discussion Example (Interview)
+If interviewer asks:
+Q: How did you handle dynamic web tables?
+You can say:
+I used locator filtering with hasText to identify specific rows dynamically instead of using index-based locators, which improves stability and avoids flaky tests when table order changes.
+
+🎯 Strong Interview Questions from These Topics
+
+How does Playwright handle dialogs internally?
+
+Difference between frameLocator and frame()?
+
+How to handle nested iframes?
+
+How to select dynamic date?
+
+How to right-click using Playwright?
+
+How does Playwright ensure stability before clicking?
+
+How to handle dynamic web tables?
+
+
+🔥 Very Important SDET-Level Discussion Points
+1. How to debug failing tests in CI?
+
+Answer:
+
+I enable trace and video retain-on-failure and use screenshot on failure to analyze root cause.
+
+2. How to structure framework?
+
+Use test.describe
+
+Use hooks for setup
+
+Use tags for selective runs
+
+Use annotations for stability
+
+3. Difference Between Screenshot, Video & Trace?
+Screenshot	Video	Trace
+Static image	Full recording	Step-by-step debugging
+Lightweight	Heavy	Best debugging tool
+🧠 Real Project Implementation Strategy
+
+In real project:
+
+use: {
+  headless: true,
+  screenshot: 'only-on-failure',
+  video: 'retain-on-failure',
+  trace: 'retain-on-failure'
+}
+🎯 Strong Interview Questions From This Section
+
+Difference between beforeAll and beforeEach?
+
+How do you debug flaky tests?
+
+What is trace viewer?
+
+How do you tag and run smoke tests?
+
+How to record video only for failed tests?
+
+How to upload file in headless mode?
+
+How to handle drag and drop?
